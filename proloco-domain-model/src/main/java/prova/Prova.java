@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import it.proloco.dm.Event;
 import it.proloco.dm.Stand;
-
+ 
 public class Prova 
 {
 	public static void main(String[] args) 
@@ -55,5 +55,9 @@ public class Prova
 			System.out.println(msg2);
 			System.out.println(msg3);
 		}
+	}
+	
+	public void pippo() {
+		// Niente
 	}
 }

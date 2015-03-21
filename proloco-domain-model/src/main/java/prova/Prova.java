@@ -24,16 +24,23 @@ public class Prova
 		stand1.setName("Da Sir Picone");		
 		stand1.setLat(2136126135.213123);
 		stand1.setLon(999292.213123);
+		stand1.setInformative(false);
 		
 		// 4. 	Creo una nuovo istanza di tipo Stand
 		//		e la chiamo "stand2".
 		// 		Successivamente gli imposto il nome.		
 		Stand stand2 = new Stand();
 		stand2.setName("Classe San Biagio");
+		stand2.setInformative(false);
+		
+		Stand stand3 = new Stand();
+		stand3.setName("Proloco");
+		stand3.setInformative(true);
 		
 		// 5.	Aggiungo i due stand all'evento1
 		evento1.addStand(stand1);
 		evento1.addStand(stand2);
+		evento1.addStand(stand3);
 		
 		// 6. 	Mi faccio dare, dall'evento1, gli stand che ho appena impostato
 		ArrayList<Stand> standsOfEvent1 = evento1.getStands();
@@ -54,6 +61,18 @@ public class Prova
 			System.out.println(msg1);
 			System.out.println(msg2);
 			System.out.println(msg3);
+			
+			boolean condizione = stand.isInformative();
+			
+			if (condizione) {
+				System.out.println("Lo Stand è informativo.");
+			} else {
+				System.out.println("Lo Stand NON è informativo.");
+			}
+			
+			if (nameOfStand.equals("Proloco")) {
+				System.out.println("PROLOCO!!!!!!");				
+			}
 		}
 	}
 	

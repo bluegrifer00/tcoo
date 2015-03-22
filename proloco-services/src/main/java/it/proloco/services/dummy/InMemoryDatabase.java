@@ -2,6 +2,7 @@ package it.proloco.services.dummy;
 
 import it.proloco.dm.Event;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -53,4 +54,15 @@ public class InMemoryDatabase {
 	public Event findById(int id) {
 		return events.get(id);
 	}
+	
+	/**
+	 * @author Gianmarco
+	 * Returns all events
+	 * Returns null if nothing found
+	 * 
+	 * */
+	public ArrayList<Event> findAllEvents() {
+		return null; // to implement
+		}
+	
 }

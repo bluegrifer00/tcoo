@@ -14,11 +14,13 @@ import it.proloco.services.dummy.InMemoryDatabase;
 /**
  *  Here you can manage the Events (create, modify, delete, search)
  * 
+ * TODO: nome + cognome (o nickname)
  * @author Gianmarco
  */
 public class EventManagementService {
 
-	void createEvent(
+	// TODO: metti i commenti
+	public void createEvent(
 			String name,
 			// int id, 
 			double minValue, 
@@ -54,15 +56,20 @@ public class EventManagementService {
 		event1.setEndDate(endDate);
 	}
 	
-
+	// TODO: nomi variabili in inglese
+	// TODO: metti i commenti
+	// TODO: deve essere public altrimenti nessuno lo può chiamare
 	Event findEventById (int id){
-		
 		InMemoryDatabase db = new InMemoryDatabase();
 		Event risultato = db.findById(id);
 		return risultato;
-			
 	}
 	
+	// TODO: nomi variabili in inglese
+	// TODO: metti i commenti
+	// TODO: deve essere public altrimenti nessuno lo può chiamare
+	// TODO: quando vuoi mettere delle linee vuote, al massimo lasciane una (e.g. riga 90 91) e sempre tra blocchi, 
+	// non tra la fine di un blocco e la parentesi graffa (94) o tra due parentesi graffe (96 97).
 	ArrayList<Event> findEventsByStartDate (String inputDateText) throws ParseException {
 		
 		// ottengo la lista degli eventi e la salvo in un array
@@ -76,13 +83,13 @@ public class EventManagementService {
 		Date InputDate = formatter.parse(inputDateText);
 		
 		ArrayList<Event> risultato = new ArrayList<Event>();
-		// eseguo un ciclo � controllo se le date corrispondono
+		// eseguo un ciclo e controllo se le date corrispondono
 		for (Event selectedEvent: listOfEvents){
 			Date EventDate = selectedEvent.getStartDate();
 			
 			
 			if (EventDate == InputDate) {
-				risultato.add(selectedEvent);
+				risultato.add(selectedEvent);			
 				
 			}
 			

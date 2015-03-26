@@ -57,15 +57,12 @@ public class InMemoryDatabase {
 	}
 	
 	/**
-	 * FIXME: occhio ai tag @ per indicare il tipo di ritrono. @author non ci va nei metodi, solo a livello di classe
+	 * Returns all events.
+	 * Returns null if nothing found.
 	 * 
-	 * FIXME: quando hai qualcosa da annotarti usa sempre TODO nei commenti, non // blabalbla in mezzo al codice.
-	 * 
-	 * @author Gianmarco
-	 * Returns all events
-	 * Returns null if nothing found
+	 * TODO: to implement 
 	 */
 	public ArrayList<Event> findAllEvents() {
-		return null; // to implement
+		return null;
 		}
 }

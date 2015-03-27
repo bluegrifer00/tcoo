@@ -1,14 +1,14 @@
 package it.proloco.services;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-
 import it.proloco.dm.Budget;
 import it.proloco.dm.Event;
 import it.proloco.dm.Location;
 import it.proloco.services.dummy.InMemoryDatabase;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 
 
 /**
@@ -66,7 +66,14 @@ public class EventManagementService {
 	 *  @param id to identify event
 	 */
 	public Event findEventById (int id){
-		InMemoryDatabase db = new InMemoryDatabase();
+		
+		// Lascio questa riga di codice perché ne dobbiamo parlare stasera
+		// Ottenendo l'istanza del database in questo modo ogni volta creo una "nuova" istanza, vuota.
+		// InMemoryDatabase db = new InMemoryDatabase();
+		
+		// Ogni volta che mi serve il database devo invece ottenere l'istanza nel seguente modo:
+		InMemoryDatabase db = InMemoryDatabase.getInstance();
+		
 		Event result = db.findById(id);
 		return result;
 	}
@@ -81,8 +88,9 @@ public class EventManagementService {
 	 */
 	public ArrayList<Event> findEventsByStartDate (String inputDateText) throws ParseException {
 		
-		// ottengo la lista degli eventi e la salvo in un array
-		InMemoryDatabase db = new InMemoryDatabase();
+		// Ogni volta che mi serve il database devo invece ottenere l'istanza nel seguente modo:
+		InMemoryDatabase db = InMemoryDatabase.getInstance();
+
 		ArrayList<Event> listOfEvents = db.findAllEvents();
 		
 		// trasformo la data in input, da String a Date

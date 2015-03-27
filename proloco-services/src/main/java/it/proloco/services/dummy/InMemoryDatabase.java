@@ -7,14 +7,33 @@ import java.util.HashMap;
 import java.util.Map;
 
 /** 
- * A dummy implementation of an in-memory database.
+ * A dummy (singleton) implementation of an in-memory database.
  * 
  * @author Andrea Gazzarini
  * @author Gianmarco Mechelli
  * @since 1.0
  */
 public class InMemoryDatabase {
+	
+	private final static InMemoryDatabase INSTANCE = new InMemoryDatabase();
+	
 	private Map<Integer, Event> events = new HashMap<Integer, Event>();
+	
+	/**
+	 * Private singleton constructor.
+	 */
+	private InMemoryDatabase() {
+		// Nothing to be done here...
+	}
+	
+	/**
+	 * Returns the singleton instance of this {@link InMemoryDatabase}.
+	 * 
+	 * @return the singleton instance of this {@link InMemoryDatabase}.
+	 */
+	public static InMemoryDatabase getInstance() {
+		return INSTANCE;
+	}
 	
 	/**
 	 * Inserts a new event associated with the given identifier.
@@ -64,5 +83,5 @@ public class InMemoryDatabase {
 	 */
 	public ArrayList<Event> findAllEvents() {
 		return null;
-		}
+	}
 }

@@ -1,9 +1,11 @@
 package it.proloco.dm;
 
-/** @author stefano santini
- * 
+import java.util.Date;
+
+/** 
  * classe dell'utente del progetto
  * 
+ * @author stefano santini
  */
 
 public class User {
@@ -20,6 +22,7 @@ public class User {
 	String cellNumber;
 	int sexOfTheUser;
 	//maschio o femmina
+	Date borndate;
 	
     /**
 	 * mostra l'username settato
@@ -177,6 +180,20 @@ public class User {
 	 */
 	public void setSexOfTheUser(int sexOfTheUser) {
 		this.sexOfTheUser = sexOfTheUser;
+	}
+	/**
+	 * mostra la data di nascita dell'utente
+	 * @return
+	 */
+	public Date getBorndate() {
+		return borndate;
+	}
+	/**
+	 * setta la data di nascita dell'utente
+	 * @param borndate
+	 */
+	public void setBorndate(Date borndate) {
+		this.borndate = borndate;
 	}
 	
 	

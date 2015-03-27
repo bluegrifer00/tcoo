@@ -1,14 +1,14 @@
 package it.proloco.services;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-
 import it.proloco.dm.Budget;
 import it.proloco.dm.Event;
 import it.proloco.dm.Location;
 import it.proloco.services.dummy.InMemoryDatabase;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 
 
 /**
@@ -19,7 +19,12 @@ import it.proloco.services.dummy.InMemoryDatabase;
  */
 public class EventManagementService {
 
-	// TODO: metti i commenti
+	/**
+	 * Create an event with all property.
+	 * 
+	 * TODO: add others property when created.
+	 * TODO: to decide if the Id parameter is useful in this method.
+	 */
 	public void createEvent(
 			String name,
 			// int id, 
@@ -56,24 +61,36 @@ public class EventManagementService {
 		event1.setEndDate(endDate);
 	}
 	
-	// TODO: nomi variabili in inglese
-	// TODO: metti i commenti
-	// TODO: deve essere public altrimenti nessuno lo può chiamare
-	Event findEventById (int id){
-		InMemoryDatabase db = new InMemoryDatabase();
-		Event risultato = db.findById(id);
-		return risultato;
+	/**
+	 *  @return the event found by specific Id
+	 *  @param id to identify event
+	 */
+	public Event findEventById (int id){
+		
+		// Lascio questa riga di codice perché ne dobbiamo parlare stasera
+		// Ottenendo l'istanza del database in questo modo ogni volta creo una "nuova" istanza, vuota.
+		// InMemoryDatabase db = new InMemoryDatabase();
+		
+		// Ogni volta che mi serve il database devo invece ottenere l'istanza nel seguente modo:
+		InMemoryDatabase db = InMemoryDatabase.getInstance();
+		
+		Event result = db.findById(id);
+		return result;
 	}
 	
-	// TODO: nomi variabili in inglese
-	// TODO: metti i commenti
-	// TODO: deve essere public altrimenti nessuno lo può chiamare
-	// TODO: quando vuoi mettere delle linee vuote, al massimo lasciane una (e.g. riga 90 91) e sempre tra blocchi, 
-	// non tra la fine di un blocco e la parentesi graffa (94) o tra due parentesi graffe (96 97).
-	ArrayList<Event> findEventsByStartDate (String inputDateText) throws ParseException {
+	
+	
+	/**
+	 * 
+	 * @param inputDateText to identify event
+	 * @return the event found by inputDateText
+	 * @throws ParseException
+	 */
+	public ArrayList<Event> findEventsByStartDate (String inputDateText) throws ParseException {
 		
-		// ottengo la lista degli eventi e la salvo in un array
-		InMemoryDatabase db = new InMemoryDatabase();
+		// Ogni volta che mi serve il database devo invece ottenere l'istanza nel seguente modo:
+		InMemoryDatabase db = InMemoryDatabase.getInstance();
+
 		ArrayList<Event> listOfEvents = db.findAllEvents();
 		
 		// trasformo la data in input, da String a Date
@@ -82,22 +99,14 @@ public class EventManagementService {
 		formatter.setLenient(false);
 		Date InputDate = formatter.parse(inputDateText);
 		
-		ArrayList<Event> risultato = new ArrayList<Event>();
+		ArrayList<Event> result = new ArrayList<Event>();
 		// eseguo un ciclo e controllo se le date corrispondono
 		for (Event selectedEvent: listOfEvents){
 			Date EventDate = selectedEvent.getStartDate();
-			
-			
 			if (EventDate == InputDate) {
-				risultato.add(selectedEvent);			
-				
+				result.add(selectedEvent);			
 			}
-			
-					
 		}
-		
-		return risultato;
-		
+		return result;
 	}
-
 }

@@ -1,9 +1,23 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>it.corso</groupId>
-  <artifactId>proloco-web-app</artifactId>
-  <version>1.0</version>
-  <packaging>war</packaging>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>it.corso</groupId>
+	<artifactId>proloco-web-app</artifactId>
+	<version>1.0</version>
+	<packaging>war</packaging>
+	<dependencies>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>it.corso</groupId>
+			<artifactId>proloco-services</artifactId>
+			<version>1.0</version>
+		</dependency>
+	</dependencies>
 	<build>
 		<plugins>
 			<plugin>
@@ -14,7 +28,7 @@
 					<path>/proloco-vignanello</path>
 					<port>8080</port>
 					<contextReloadable>true</contextReloadable>
-<!-- 					<contextFile>tomcat/context.xml</contextFile> -->
+					<!-- <contextFile>tomcat/context.xml</contextFile> -->
 					<systemProperties>
 						<log4j.configuration>file:///${project.build.directory}/tomcat/conf/log4j.xml</log4j.configuration>
 					</systemProperties>
@@ -28,5 +42,5 @@
 				</dependencies>
 			</plugin>
 		</plugins>
-	</build>  
+	</build>
 </project>

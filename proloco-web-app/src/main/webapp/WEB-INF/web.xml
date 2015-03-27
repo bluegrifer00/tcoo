@@ -5,4 +5,13 @@
 	<description>
 		Proloco Web application module.
 	</description>
+	<servlet>
+		<display-name>EventController</display-name>
+		<servlet-name>EventController</servlet-name>
+		<servlet-class>it.proloco.web.EventControllerServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EventController</servlet-name>
+		<url-pattern>/createEvent</url-pattern>
+	</servlet-mapping>
 </web-app>

@@ -1,6 +1,6 @@
 package it.proloco.dm;
 
-public class Budget {
+public class Budget extends DomainEntity{
 	double minValue;
 	double maxValue;
 

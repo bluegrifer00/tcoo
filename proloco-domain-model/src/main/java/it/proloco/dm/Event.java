@@ -3,9 +3,9 @@ package it.proloco.dm;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Event /*extends DomainEntity (da togliere asterischi quando creata)*/{
+public class Event extends DomainEntity {
 
-	//proprietà della classe evento
+	//proprietï¿½ della classe evento
 	String name;
 	Budget budget;
 	Location location;

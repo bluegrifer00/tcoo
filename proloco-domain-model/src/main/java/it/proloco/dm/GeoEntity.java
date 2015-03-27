@@ -1,6 +1,6 @@
 package it.proloco.dm;
 
-public abstract class GeoEntity {
+public abstract class GeoEntity extends DomainEntity{
 	double lat;
 	double lon;
 

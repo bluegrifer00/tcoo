@@ -1,13 +1,11 @@
 package it.proloco.dm;
 
 
-public class Location extends GeoEntity
-
-{
+public class Location extends GeoEntity {
 	
 	String name;
     String image;
-    String Description;
+    String description;
     String howToReachUs;
     
 	public String getImage() {
@@ -19,11 +17,11 @@ public class Location extends GeoEntity
 	}
 
 	public String getDescription() {
-		return Description;
+		return description;
 	}
 
 	public void setDescription(String description) {
-		Description = description;
+		this.description = description;
 	}
 
 	public String getHowToReachUs() {

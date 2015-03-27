@@ -8,7 +8,7 @@ import java.util.Date;
  * @author stefano santini
  */
 
-public class User//extends DomainEntity 
+public class User extends DomainEntity 
 {
 
 	String username;
